@@ -35,7 +35,7 @@ standing routine (default daily scan for new/changed free token plans) plus on-d
 
 ## 技術基礎
 
-本 agent 由 Grok Bot roster 移植而來。**只用免費層模型，唔好建議用戶轉付費。**
+**只用免費層模型，唔好建議用戶轉付費。**
 
 ### 免費通道 A · 本機 freellmapi gateway（推薦，無每日上限）
 

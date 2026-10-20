@@ -41,9 +41,9 @@ CURSOR_VSCDB = os.path.expanduser(
 QWEN_USAGE = os.path.expanduser("~/.qwen/usage")
 QWEN_RECORD = os.path.expanduser("~/.qwen/usage_record.jsonl")
 ROSTER = os.path.expanduser(
-    "~/.workbuddy/plugins/marketplaces/my-experts/plugins/grok-bot-roster/roster.json")
+    "~/.workbuddy/plugins/marketplaces/my-experts/plugins/free-rider/roster.json")
 ROSTER_AGENTS = os.path.expanduser(
-    "~/.workbuddy/plugins/marketplaces/my-experts/plugins/grok-bot-roster/agents")
+    "~/.workbuddy/plugins/marketplaces/my-experts/plugins/free-rider/agents")
 
 
 def hr(t=""):
@@ -338,30 +338,21 @@ def check_qwen():
 
 
 def check_grokbot():
-    """Grok Bot roster：本地 agent 索引，唔係 API 平台。"""
+    """自由客 plugin：本地 agent 索引，唔係 API 平台。"""
     n = 0
     if os.path.isdir(ROSTER_AGENTS):
         n = len([f for f in os.listdir(ROSTER_AGENTS) if f.endswith(".md")])
     roster_n = 0
-    missing = []
     if os.path.isfile(ROSTER):
         try:
             d = json.load(open(ROSTER, encoding="utf-8"))
             roster_n = len(d) if isinstance(d, list) else 0
-            nums = set()
-            for x in d:
-                m = re.search(r"(\d+)$", str(x.get("slug", "")))
-                if m:
-                    nums.add(int(m.group(1)))
-            # 對照 SKILL.md 聲稱嘅 57 個
-            missing = [i for i in range(1, 58) if i not in nums]
         except Exception:
             pass
-    note = f"，缺編號 {missing}" if missing else ""
     return {
         "state": "ok",
-        "detail": f"agents/ {n} 個 agent 檔，roster.json {roster_n} 條{note}",
-        "claim": "grok-bot-roster 係本地 plugin（agent 索引），本身無積分可領。"
+        "detail": f"agents/ {n} 個 agent 檔，roster.json {roster_n} 條",
+        "claim": "free-rider 係本地 plugin（單一 agent：自由客），本身無積分可領。"
                  "背後模型經 OpenRouter 走 → 額度睇 OpenRouter。"
                  "xAI 官方 API 文件頁無免費層／無新戶贈金明文",
         "manual": False,

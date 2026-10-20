@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-bind_grok_bot_free.py — 將 Grok Bot roster 43 個 agent 綁去免費模型通道。
+bind_grok_bot_free.py — 將 agent 綁去免費模型通道。
+
+（如果你只保留「自由客」單一 agent，呢個腳本一樣 work —— 佢掃 `agents/*.md`，
+得一個檔就改一個檔。）
 
 WorkBuddy agent frontmatter 支援嘅欄位（2026-10-20 實測 WorkBuddy asar）：
     name / description / displayName / profession / maxTurns / skills
@@ -28,7 +31,12 @@ import re
 import shutil
 from pathlib import Path
 
-ROSTER = Path.home() / ".workbuddy" / "plugins" / "marketplaces" / "my-experts" / "plugins" / "grok-bot-roster"
+_PLUGINS = Path.home() / ".workbuddy" / "plugins" / "marketplaces" / "my-experts" / "plugins"
+# 自動搵 plugin 目錄：新名 free-rider 優先，舊名 grok-bot-roster 兼容
+ROSTER = next(
+    (p for p in (_PLUGINS / "free-rider", _PLUGINS / "grok-bot-roster") if p.is_dir()),
+    _PLUGINS / "free-rider",
+)
 AGENTS_DIR = ROSTER / "agents"
 
 # 經 freellmapi gateway 嘅免費模型短 id（models.json 已有，實測 cost=0）
@@ -61,7 +69,7 @@ def build_tech_block() -> str:
         f"  - `{mid}`（{ctx}）— {note}" for mid, ctx, note in FREE_MODELS_GATEWAY
     )
     orr = "\n".join(f"  - `{mid}`（{ctx}）" for mid, ctx in FREE_MODELS_OPENROUTER)
-    return f"""本 agent 由 Grok Bot roster 移植而來。**只用免費層模型，唔好建議用戶轉付費。**
+    return f"""**只用免費層模型，唔好建議用戶轉付費。**
 
 ### 免費通道 A · 本機 freellmapi gateway（推薦，無每日上限）
 

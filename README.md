@@ -2,12 +2,11 @@
 
 # Free-Rider 自由客
 
-### 🆓 43 個 AI Agent 陣容 · 零成本 AI Token 接入
+### 🆓 零成本 AI Token 接入 · 免費 API 目錄
 
 **搵免費／優惠 AI API 方案，核實仲生效，然後零成本接落 Cursor / WorkBuddy / DSH / Qwen Code**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Agents](https://img.shields.io/badge/agents-43-blue.svg)](agents/)
 [![Providers](https://img.shields.io/badge/providers-30%20%2F%20513%2B%20models-purple.svg)](skills/free-api-directory/)
 [![Verified](https://img.shields.io/badge/verified-6%2F6%20cost%3D0-success.svg)](skills/free-api-directory/)
 
@@ -17,8 +16,9 @@
 
 ## 這是什麼
 
-**Free-Rider（自由客）** 是一個 WorkBuddy plugin，收錄 **43 個專職 AI agent**，
-旗艦 agent「自由客」專責一件事：**搵出仍在生效嘅免費／優惠 AI API 方案，逐個核實，然後交出確切接入步驟**。
+**自由客（Free-Rider）** 係一個 WorkBuddy agent，專責一件事：
+
+> **搵出仍在生效嘅免費／優惠 AI API 方案，逐個核實，然後交出確切接入步驟。**
 
 配備兩套可執行 skill：
 
@@ -70,14 +70,6 @@ python configure_cursor_free.py --apply --wait 3600 # 或者：等 Cursor 關咗
 > 腳本偵測到進程會直接拒絕改，**唔會強制 kill 你的 Cursor**。
 > 需要 `pywin32` + `cryptography`（Windows only）。
 
-### 將整個 agent 陣容綁去免費模型通道
-
-```bash
-cd skills/free-api-directory/scripts
-python bind_grok_bot_free.py --check       # 睇現況
-python bind_grok_bot_free.py --apply       # 改 43 個 agent（自動備份）
-```
-
 ---
 
 ## 免費通道
@@ -115,78 +107,9 @@ python bind_grok_bot_free.py --apply       # 改 43 個 agent（自動備份）
 
 ---
 
-## 42 個專業 agent
-
-<details>
-<summary>點擊展開完整陣容</summary>
-
-### 工程 / 建造（香港）
-| Agent | 角色 |
-|---|---|
-| `香港土木工程師` | 場地監督、土木工程、計算書、規範引用 |
-| `香港建築工程師` | 樓宇裝備、屋宇設備工程 |
-| `香港建築師` | 建築設計與法定規例 |
-| `香港建材` | 香港建築材料銷售 |
-
-### 開發 / 技術
-| Agent | 角色 |
-|---|---|
-| `前端開發` | React/Vue/Angular/Svelte，CWV、WCAG AA |
-| `高級開發` | senior full-stack：plan → write → verify |
-| `全端搭建師` | 一句 brief → 完整可跑應用 |
-| `網頁專家` | 建站、除錯、優化、部署 |
-| `現代網頁` | Next.js / React 快速產出 |
-| `網站專員` | 跨境電商網站維護 |
-| `硬件系統工程師` | 伺服器 / 網絡 / 系統硬件 |
-| `逆向工程師` | 逆向目標 → Cursor / WorkBuddy 可跑版本 |
-| `夜間審核工程師` | 通宵跑 research → PR 的工程審核員 |
-| `首席AI官` | AI 戰略 |
-| `工作台搭建師` | no-code / low-code AI agent 工作台 |
-| `工作區搭建師` | 個人數碼工作區頁面 |
-| `雲端代理協調助手` | 啟動雲端代理、追蹤卡住項目 |
-
-### 營銷 / 內容
-| Agent | 角色 |
-|---|---|
-| `外展拓客` | 找符合 ICP 的潛在客戶 + 起草外展 |
-| `SEO與AEO台` | SEO / AEO，關鍵字 → 內容 brief |
-| `動畫設計師` | 廣告動畫設計 |
-| `音樂監製` | 廣告配樂監製 |
-| `平面設計師` | 平面 / 印刷設計 |
-| `編劇` | 廣告腳本 |
-| `文案策略師` | 廣告文案策略 |
-| `縮圖封面師` | 縮圖、封面、關鍵幀 |
-| `剪接師傅` | 影片剪輯 |
-| `成效分析師` | 廣告成效量測與建議 |
-| `影視總監` | 影片端到端統籌 |
-| `媒介買手` | Meta / Google 付費投放 |
-| `晨報` | 個人化日報 |
-
-### 營運 / 財務
-| Agent | 角色 |
-|---|---|
-| `總經理` | 由 Notion 推動團隊項目 |
-| `團隊經理` | 跨境電商營運編排 |
-| `會計` | 記帳、對賬、稅務 |
-| `法務` | 跨境法律事務 |
-| `人事` | HR 運作 |
-| `行政` | 行政與審批流程 |
-| `保安` | 公司安全運營 |
-| `供應商對接` | 中國供應商對接 |
-| `物流報關` | 內地↔海外貨運與報關 |
-| `上架專員` | 海外電商上架與定價 |
-| `訂單客服` | 海外訂單與客服 |
-| `蛋博士` | 設計 Grok Bot |
-
-</details>
-
-旗艦：**自由客**（`grok-agent-01`）—— 搵免費 AI 方案 + 零成本接入。
-
----
-
 ## 紅線
 
-所有 agent 共守：
+自由客遵守以下規則，唔會違反：
 
 - ❌ 唔買付費方案
 - ❌ 唔偷 / 唔 share / 唔賣 key
@@ -202,11 +125,9 @@ python bind_grok_bot_free.py --apply       # 改 43 個 agent（自動備份）
 
 ```
 Free-rider/
-├── .codebuddy-plugin/plugin.json      plugin manifest
-├── agents/                            43 個 agent markdown
-│   ├── grok-agent-01.md               自由客 ← 旗艦
-│   ├── grok-agent-02.md               總經理
-│   └── ...                            （43 個）
+├── .codebuddy-plugin/plugin.json      plugin manifest（單一 agent）
+├── agents/
+│   └── grok-agent-01.md               自由客 ← 唯一 agent
 ├── skills/
 │   ├── free-for-all/                  免費額度巡檢 + 多端安裝 + 健康檢查
 │   │   ├── SKILL.md
@@ -223,9 +144,9 @@ Free-rider/
 │           ├── build_directory.py     由 source 重抽目錄
 │           ├── configure_cursor_free.py  Cursor BYOK 零成本接入
 │           ├── cursor_oscrypt.py      Chromium OSCrypt v10 加解密
-│           └── bind_grok_bot_free.py  agent 陣容綁免費通道
+│           └── bind_grok_bot_free.py  agent 綁免費通道
 ├── avatars/expert.png
-└── roster.json                        43 條 agent manifest
+└── roster.json                        agent manifest
 ```
 
 ---

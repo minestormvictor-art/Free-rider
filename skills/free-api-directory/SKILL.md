@@ -129,7 +129,7 @@ python configure_cursor_free.py --apply --state-db <副本路徑>   # 沙盒 dry
 
 > `nemotron-3-super` 已於 2026-10-20 實測 404（上游下架），已從清單剔除。
 
-### 路線 2 · Grok Bot roster（`bind_grok_bot_free.py`）
+### 路線 2 · 將 agent 綁去免費通道（`bind_grok_bot_free.py`）
 
 **WorkBuddy agent frontmatter 冇 `model:` 欄位**（已於 WorkBuddy asar 驗證）——
 agent 用邊個模型係 UI 層決定，唔可以喺 plugin 檔案硬綁。所以 Token 自由要咁做：
@@ -140,9 +140,11 @@ agent 用邊個模型係 UI 層決定，唔可以喺 plugin 檔案硬綁。所�
 ```bash
 cd scripts
 python bind_grok_bot_free.py --check                        # 睇現況
-python bind_grok_bot_free.py --apply                        # 改 43 個 agent（自動備份）
+python bind_grok_bot_free.py --apply                        # 改 agents/*.md（自動備份）
 python bind_grok_bot_free.py --restore-from <backup_dir>    # 還原
 ```
+
+腳本掃 `agents/*.md`，本 plugin 只有「自由客」一個 agent，改一個檔。
 
 **兩個易踩嘅坑**（已修）：
 - `skills:` 一定要插喺 YAML 陣列**括號裡面**：`[a, free-api-directory]`。

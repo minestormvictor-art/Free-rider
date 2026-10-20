@@ -1,6 +1,6 @@
 ---
 name: free-for-all
-description: Find and verify live free/freemium AI API plans (OpenAI-compatible, Anthropic, Google, open routers, student/trial credits, zero-cost tiers), then wire them into Cursor, WorkBuddy, DSH and Qwen Code. Use when the user asks for free AI API keys, cheap LLM access, how to add a custom provider to Cursor, or wants their existing model configs checked and synced. Includes live key validation and a 57-agent Grok Bot roster index.
+description: Find and verify live free/freemium AI API plans (OpenAI-compatible, Anthropic, Google, open routers, student/trial credits, zero-cost tiers), then wire them into Cursor, WorkBuddy, DSH and Qwen Code. Use when the user asks for free AI API keys, cheap LLM access, how to add a custom provider to Cursor, or wants their existing model configs checked and synced. Includes live key validation and an offline directory of 30 free LLM API providers (513+ models).
 ---
 
 # 自由客 — 免費 AI 資源偵察與接入
@@ -129,68 +129,20 @@ x-ai/grok-build-0.1 / grok-4.7
 
 **Kimi（moonshotai）同豆包（bytedance-seed）全部收費，全部支援 function calling。**
 
-## 附錄 B · 43 個 Grok Bot Agent 名單
+## 附錄 B · Agent 說明
 
-> 2026-10-20 融合後：原 57 個減至 43 個。13 個職能重疊者已併入對應嘅本地 expert
-> （工料測量／屋宇裝備／合約／結構／八字／風水／占卜／玄學分流／項目管理／室內／三個繪圖），
-> 內容以「作業資源與技術來源」章節形式保留。1 個完全重複者已合併。
+本 plugin 淨係一個 agent：**自由客**（`agents/grok-agent-01.md`，`roster.json` 一條 manifest）。
 
-**現存編號缺號**（2026-10-20 實測 `roster.json` 43 條、`agents/` 43 個 `.md`）：
-`6, 9, 11, 21, 24, 36, 40, 41, 42, 45, 51, 54, 55, 56, 57` —— 呢啲係融合掉咗嘅職能，
-唔係漏建。要對帳原 57 個清單時以缺號表為準，唔好當成 bug。
+**自由客 · 自由 AI 資源偵察員**
 
-`roster.json` 有完整 manifest。
+ONLY job：搵 free / freemium AI token 同 API 方案（OpenAI-compatible、Anthropic、Google、開源 router、
+學生／試用 credit、零成本層），逐個核實仲生效，然後交出確切 base URL、API key 申請路徑，
+同接入步驟（Cursor / WorkBuddy / DSH / Qwen Code）。
 
-**營運／財務（13）**
-`自由客`
-`總經理`
-`保安`
-`訂單客服`
-`法務`
-`人事`
-`雲端代理協調助手`
-`行政`
-`會計`
-`供應商對接`
-`物流報關`
-`上架專員`
-`團隊經理`
+**技能掛載**：`skills: [openrouter-bridge, free-for-all, free-api-directory]`
 
-**開發／技術（13）**
-`前端開發`
-`首席AI官`
-`工作台搭建師`
-`高級開發`
-`蛋博士`
-`網站專員`
-`夜間審核工程師`
-`全端搭建師`
-`網頁專家`
-`硬件系統工程師`
-`工作區搭建師`
-`逆向工程師`
-`現代網頁`
-
-**營銷／內容（13）**
-`動畫設計師`
-`外展拓客`
-`SEO與AEO台`
-`音樂監製`
-`媒介買手`
-`平面設計師`
-`編劇`
-`文案策略師`
-`縮圖封面師`
-`剪接師傅`
-`成效分析師`
-`影視總監`
-`晨報`
-
-**工程／建造（香港）（4）**
-`香港建材`
-`香港土木工程師`
-`香港建築師`
-`香港建築工程師`
+- `free-for-all` —— 本 skill，作業手冊
+- `free-api-directory` —— 離線 provider 目錄（30 家 / 513+ 模型）同接入腳本
 
 ## 附錄 C · 常見錯誤碼
 
@@ -266,7 +218,7 @@ x-ai/grok-build-0.1 / grok-4.7
 | **MiniMax** | ❌ | **完全按量計費，無免費層、無試用 credit** | ➖ | 官方無餘額 API | M3.1-Flash 輸入 ¥1/百萬 tokens |
 | **Cursor Hobby** | ✅ | 2,000 completions/月 + 50 次慢速 premium request，無需卡 | ❌ 手動 | 冇餘額 API | BYOK 要 UI 手貼（safeStorage 加密，**冇指令可代勞**） |
 | **Qwen Code** | ✅ | **QwenOAuth 每日 1,000 次**（2026-02-09 由 2,000 減半） | ❌ 手動 | 本機 `~/.qwen/usage/token-usage-YYYY-MM-DD.jsonl` | 本機現時指向 OpenRouter → OAuth 額度**未啟用**；要 `qwen` 內 `/auth` 選 QwenOAuth |
-| **Grok Bot roster** | ➖ | 本地 plugin，無積分；背後經 OpenRouter | ✅ 自動 | 睇 OpenRouter | xAI 官方 API 頁**無免費層明文** |
+| **free-rider（本 plugin）** | ➖ | 本地 plugin，無積分；背後經 OpenRouter | ✅ 自動 | 睇 OpenRouter | xAI 官方 API 頁**無免費層明文** |
 | **GitHub Models** | ❌ | 2026-07-30 全面退役 | — | — | 改用 Azure AI Foundry |
 | **HF Inference Providers** | ⚠ | 免費戶 $0/月，只有 PRO 每席 $2 | — | — | Router `https://router.huggingface.co/v1` |
 
