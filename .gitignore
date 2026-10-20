@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 備份（agent / 設定）
+_backup_agents_*/
+*.bak
+*.bak-*
+state.vscdb
+state.vscdb-wal
+state.vscdb-shm
+
+# 本機設定 / 憑證（絕對唔好 commit）
+.env
+*.key
+*credentials*
+freeapi.db
+
+# 輸出
+*.log
+out/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

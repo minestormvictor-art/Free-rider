@@ -1,0 +1,55 @@
+{
+  "name": "free-rider",
+  "version": "1.1.0",
+  "description": "43-agent AI workforce for WorkBuddy, with the 自由客 (Free-Rider) agent as the flagship — finds and verifies live free/freemium AI API plans, then wires them into Cursor, WorkBuddy, DSH and Qwen Code at zero cost.",
+  "author": {
+    "name": "Victor Tse Yu Fai (Victore)",
+    "url": "https://github.com/minestormvictor-art"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/minestormvictor-art/Free-rider",
+  "repository": "https://github.com/minestormvictor-art/Free-rider",
+
+  "agents": ["./agents/grok-agent-01.md"],
+  "skills": ["./skills/free-for-all", "./skills/free-api-directory"],
+
+  "expertType": "agent",
+  "agentName": "grok-agent-01",
+
+  "displayName": {
+    "en": "Free-Rider",
+    "zh": "自由客"
+  },
+  "profession": {
+    "en": "Free AI Resource Scout",
+    "zh": "免費資源偵察員"
+  },
+  "displayDescription": {
+    "en": "Hunts down live free and freemium AI API plans, verifies each one is still available, and hands you the exact base URL, key signup path and settings steps to add it to Cursor, WorkBuddy, DSH or Qwen Code. Ships a 43-agent workforce covering engineering, quantity surveying, design, marketing, finance and more, plus an offline provider directory (30 providers / 513+ models) and a verified zero-cost Cursor BYOK wiring script.",
+    "zh": "搜尋仍在生效嘅免費／優惠 AI API 方案，逐個核實仲用得，交付確切 base URL、申請路徑同接入步驟（Cursor／WorkBuddy／DSH／Qwen Code）。另附 43 個 agent 陣容 —— 工程、工料測量、設計、營銷、財務等全線角色。內置離線 provider 目錄（30 家／513+ 模型）同經實測驗證嘅 Cursor 零成本接入腳本。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "06-Engineering",
+
+  "defaultInitPrompt": {
+    "zh": "幫我搵下而家仲有效嘅免費 AI API 方案，同埋點樣加落 Cursor。",
+    "en": "Find me AI API plans that are still free right now, and how to add them to Cursor."
+  },
+
+  "plugin": "free-rider",
+  "tags": [
+    { "en": "Free AI Resources", "zh": "免費 AI 資源" },
+    { "en": "Zero-Cost Token", "zh": "零成本 Token" },
+    { "en": "43-Agent Workforce", "zh": "43 個 agent 陣容" },
+    { "en": "Cursor BYOK Wiring", "zh": "Cursor 金鑰接入" },
+    { "en": "Offline Provider Directory", "zh": "離線 Provider 目錄" }
+  ],
+  "quickPrompts": [
+    { "en": "Find AI API plans that are still free right now.", "zh": "搵下而家仲免費嘅 AI API 方案。" },
+    { "en": "Which free providers need no credit card?", "zh": "邊啲免費 provider 唔使信用卡？" },
+    { "en": "List every free LLM API provider with base URLs and signup links.", "zh": "列出全部免費 LLM API provider，同 base URL 同申請入口。" },
+    { "en": "How do I wire a free model into Cursor without paying anything?", "zh": "點樣零成本將免費模型接入 Cursor？" },
+    { "en": "Which of my configured models are working? Run a health check.", "zh": "我設定嘅 model 邊啲 work 得到？跑個健康檢查。" },
+    { "en": "Show me the full agent roster.", "zh": "俾我睇晒 agent 名單。" }
+  ]
+}
